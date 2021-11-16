@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.root.mybatis.FileMapper">
+	<resultMap id="shoes" type="com.care.root.dto.ShoesDTO">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="imgName" column="img_name"/>
+	</resultMap>
+	<insert id="saveData">
+		insert into shoes_image values(#{id},#{name},#{imgName})
+	</insert>
+	<select id="getShoesImage" resultMap="shoes">
+		select * from shoes_image
+	</select>
+</mapper>
